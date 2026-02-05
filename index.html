@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Peregrine Rowing Club - Cambridge's all-women's masters rowing club for women aged 40+. Join our welcoming community for competitive rowing and lifelong friendships on the River Cam.">
+    <meta name="keywords" content="rowing, Cambridge, women's rowing, masters rowing, learn to row, River Cam, rowing club">
+    <meta property="og:title" content="Peregrine Rowing Club | Cambridge">
+    <meta property="og:description" content="Cambridge's all-women's masters rowing club. Strength, sisterhood, and the joy of rowing.">
+    <meta property="og:type" content="website">
     <title>Peregrine Rowing Club | Cambridge</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%231a2744'/><text x='50' y='65' font-size='50' text-anchor='middle' fill='%23e8887a' font-family='serif' font-weight='bold'>P</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -1244,6 +1251,684 @@
             }
         }
 
+        /* Gallery Section */
+        .gallery {
+            padding: 8rem 4rem;
+            background: var(--cream);
+        }
+
+        .gallery .section-header h2 {
+            color: var(--navy);
+        }
+
+        .gallery .section-header p {
+            color: var(--navy);
+            opacity: 0.7;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26, 39, 68, 0.6) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                padding: 4rem 1.5rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-item:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+        }
+
+        /* Training Schedule Section */
+        .training {
+            padding: 8rem 4rem;
+            background: var(--white);
+        }
+
+        .training .section-header h2 {
+            color: var(--navy);
+        }
+
+        .training .section-header p {
+            color: var(--navy);
+            opacity: 0.7;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .schedule-card {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(26, 39, 68, 0.1);
+        }
+
+        .schedule-day {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--salmon);
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-time {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .schedule-type {
+            font-size: 0.9rem;
+            color: var(--navy);
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .schedule-note {
+            text-align: center;
+            margin-top: 3rem;
+            color: var(--navy);
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .training {
+                padding: 4rem 1.5rem;
+            }
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Committee Section */
+        .committee {
+            padding: 8rem 4rem;
+            background: var(--pale-blue-light);
+        }
+
+        .committee .section-header h2 {
+            color: var(--navy);
+        }
+
+        .committee .section-header p {
+            color: var(--navy);
+            opacity: 0.7;
+        }
+
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .committee-card {
+            text-align: center;
+        }
+
+        .committee-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--salmon) 0%, var(--salmon-light) 100%);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .committee-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .committee-role {
+            font-size: 0.9rem;
+            color: var(--salmon);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .committee-card p {
+            font-size: 0.85rem;
+            color: var(--navy);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 1024px) {
+            .committee-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .committee {
+                padding: 4rem 1.5rem;
+            }
+            .committee-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Membership Section */
+        .membership {
+            padding: 8rem 4rem;
+            background: var(--navy);
+        }
+
+        .membership .section-header h2 {
+            color: var(--white);
+        }
+
+        .membership .section-header p {
+            color: var(--pale-blue-light);
+        }
+
+        .membership-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .membership-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(168, 197, 217, 0.2);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .membership-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--salmon);
+        }
+
+        .membership-card.featured {
+            border-color: var(--salmon);
+            position: relative;
+        }
+
+        .membership-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--salmon);
+            color: var(--white);
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .membership-type {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .membership-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--salmon);
+            margin-bottom: 0.5rem;
+        }
+
+        .membership-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--pale-blue-light);
+        }
+
+        .membership-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .membership-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            color: var(--pale-blue-light);
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(168, 197, 217, 0.1);
+        }
+
+        .membership-features li:last-child {
+            border-bottom: none;
+        }
+
+        .membership-features svg {
+            width: 20px;
+            height: 20px;
+            color: var(--salmon);
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .membership {
+                padding: 4rem 1.5rem;
+            }
+            .membership-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 8rem 4rem;
+            background: var(--cream);
+        }
+
+        .faq .section-header h2 {
+            color: var(--navy);
+        }
+
+        .faq .section-header p {
+            color: var(--navy);
+            opacity: 0.7;
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(26, 39, 68, 0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--pale-blue-light);
+        }
+
+        .faq-question h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 0;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--salmon);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 0 2rem 1.5rem;
+            color: var(--navy);
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .faq {
+                padding: 4rem 1.5rem;
+            }
+            .faq-question {
+                padding: 1.25rem 1.5rem;
+            }
+            .faq-question h4 {
+                font-size: 1rem;
+            }
+            .faq-answer p {
+                padding: 0 1.5rem 1.25rem;
+            }
+        }
+
+        /* Honours Section */
+        .honours {
+            padding: 8rem 4rem;
+            background: var(--white);
+        }
+
+        .honours .section-header h2 {
+            color: var(--navy);
+        }
+
+        .honours .section-header p {
+            color: var(--navy);
+            opacity: 0.7;
+        }
+
+        .honours-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .honours-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--pale-blue);
+            transform: translateX(-50%);
+        }
+
+        .honour-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .honour-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .honour-content {
+            width: 45%;
+            background: var(--cream);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+
+        .honour-year {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--salmon);
+            margin-bottom: 0.5rem;
+        }
+
+        .honour-content h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .honour-content p {
+            font-size: 0.9rem;
+            color: var(--navy);
+            opacity: 0.7;
+        }
+
+        .honour-dot {
+            width: 16px;
+            height: 16px;
+            background: var(--salmon);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 3px solid var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .honours {
+                padding: 4rem 1.5rem;
+            }
+            .honours-timeline::before {
+                left: 20px;
+            }
+            .honour-item,
+            .honour-item:nth-child(odd) {
+                flex-direction: row;
+            }
+            .honour-content {
+                width: calc(100% - 50px);
+                margin-left: 40px;
+            }
+            .honour-dot {
+                left: 20px;
+            }
+        }
+
+        /* Safety Section */
+        .safety {
+            padding: 8rem 4rem;
+            background: var(--pale-blue-light);
+        }
+
+        .safety .section-header h2 {
+            color: var(--navy);
+        }
+
+        .safety .section-header p {
+            color: var(--navy);
+            opacity: 0.7;
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .safety-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .safety-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .safety-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--salmon);
+        }
+
+        .safety-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .safety-card p {
+            font-size: 0.9rem;
+            color: var(--navy);
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .safety {
+                padding: 4rem 1.5rem;
+            }
+            .safety-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Instagram Feed Section */
+        .instagram-feed {
+            padding: 6rem 4rem;
+            background: var(--navy);
+            text-align: center;
+        }
+
+        .instagram-feed h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .instagram-feed h2 span {
+            color: var(--salmon);
+        }
+
+        .instagram-feed > p {
+            color: var(--pale-blue-light);
+            margin-bottom: 2rem;
+        }
+
+        .instagram-feed > p a {
+            color: var(--salmon);
+            text-decoration: none;
+        }
+
+        .instagram-feed > p a:hover {
+            text-decoration: underline;
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .instagram-item {
+            aspect-ratio: 1;
+            background: rgba(168, 197, 217, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .instagram-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .instagram-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .instagram-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--pale-blue);
+        }
+
+        @media (max-width: 768px) {
+            .instagram-feed {
+                padding: 4rem 1.5rem;
+            }
+            .instagram-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         /* Footer */
         footer {
             background: var(--navy-dark);
@@ -1351,6 +2036,17 @@
         .footer-bottom a:hover {
             opacity: 1;
             color: var(--salmon);
+        }
+
+        .footer-legal {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-legal span {
+            color: var(--pale-blue-light);
+            opacity: 0.3;
         }
 
         /* Responsive */
@@ -1468,15 +2164,15 @@
     <!-- Stats Section -->
     <section class="stats" style="grid-template-columns: repeat(3, 1fr);">
         <div class="stat-item">
-            <div class="stat-number">2016<span>.</span></div>
-            <div class="stat-label">Founded</div>
-        </div>
-        <div class="stat-item">
             <div class="stat-number">40<span>+</span></div>
             <div class="stat-label">Active Members</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">Racing</div>
+            <div class="stat-number">2016<span>.</span></div>
+            <div class="stat-label">Founded</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">Cambridge<span>.</span></div>
             <div class="stat-label">&nbsp;</div>
         </div>
     </section>
@@ -1698,6 +2394,323 @@
     </section>
     </div>
 
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="section-header">
+            <h2>Life at <span>Peregrine</span></h2>
+            <p>From early morning outings to race day celebrations, see what it's like to be a Peregrine.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="team-photo2.jpg" alt="Team rowing together">
+            </div>
+            <div class="gallery-item">
+                <img src="team-photo.jpg" alt="Team celebration">
+            </div>
+            <div class="gallery-item">
+                <img src="team_photo3.jpg" alt="Learn to row session">
+            </div>
+            <div class="gallery-item">
+                <img src="team-photo.jpg" alt="Training on the Cam">
+            </div>
+            <div class="gallery-item">
+                <img src="team-photo2.jpg" alt="Race day">
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Schedule Section -->
+    <section class="training" id="training">
+        <div class="section-header">
+            <h2>Training <span>Schedule</span></h2>
+            <p>Join us on the water throughout the week. All sessions depart from Catz Boat House.</p>
+        </div>
+        <div class="schedule-grid">
+            <div class="schedule-card">
+                <div class="schedule-day">Tuesday</div>
+                <div class="schedule-time">6:00 AM</div>
+                <div class="schedule-type">Squad Training</div>
+            </div>
+            <div class="schedule-card">
+                <div class="schedule-day">Thursday</div>
+                <div class="schedule-time">6:00 AM</div>
+                <div class="schedule-type">Squad Training</div>
+            </div>
+            <div class="schedule-card">
+                <div class="schedule-day">Saturday</div>
+                <div class="schedule-time">8:00 AM</div>
+                <div class="schedule-type">Mixed Ability</div>
+            </div>
+        </div>
+        <p class="schedule-note">Additional ergo sessions and coaching available. Schedule may vary seasonally.</p>
+    </section>
+
+    <!-- Committee Section -->
+    <section class="committee" id="committee">
+        <div class="section-header">
+            <h2>Meet the <span>Committee</span></h2>
+            <p>The dedicated volunteers who keep Peregrine running smoothly.</p>
+        </div>
+        <div class="committee-grid">
+            <div class="committee-card">
+                <div class="committee-avatar">C</div>
+                <h4>Club Captain</h4>
+                <div class="committee-role">Captain</div>
+                <p>Leads the club and coordinates all activities</p>
+            </div>
+            <div class="committee-card">
+                <div class="committee-avatar">V</div>
+                <h4>Vice Captain</h4>
+                <div class="committee-role">Vice Captain</div>
+                <p>Supports the captain and manages crews</p>
+            </div>
+            <div class="committee-card">
+                <div class="committee-avatar">T</div>
+                <h4>Treasurer</h4>
+                <div class="committee-role">Treasurer</div>
+                <p>Manages club finances and memberships</p>
+            </div>
+            <div class="committee-card">
+                <div class="committee-avatar">S</div>
+                <h4>Secretary</h4>
+                <div class="committee-role">Secretary</div>
+                <p>Communications and administration</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="membership" id="membership">
+        <div class="section-header">
+            <h2>Membership <span>Options</span></h2>
+            <p>Choose the membership that suits your rowing goals.</p>
+        </div>
+        <div class="membership-grid">
+            <div class="membership-card">
+                <div class="membership-type">Associate</div>
+                <div class="membership-price">£150 <span>/year</span></div>
+                <ul class="membership-features">
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        Access to Saturday sessions
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        Use of club equipment
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        Social events access
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        British Rowing membership
+                    </li>
+                </ul>
+                <a href="#join" class="btn btn-secondary">Get Started</a>
+            </div>
+            <div class="membership-card featured">
+                <div class="membership-badge">Most Popular</div>
+                <div class="membership-type">Full Member</div>
+                <div class="membership-price">£300 <span>/year</span></div>
+                <ul class="membership-features">
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        All training sessions
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        Race squad eligibility
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        Priority event entry
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        Use of all club boats
+                    </li>
+                    <li>
+                        <svg fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        British Rowing membership
+                    </li>
+                </ul>
+                <a href="#join" class="btn btn-primary">Join Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <h2>Frequently Asked <span>Questions</span></h2>
+            <p>Everything you need to know about joining Peregrine.</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Do I need previous rowing experience?</h4>
+                    <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Not at all! We welcome complete beginners through our Learn To Row programme. Many of our most enthusiastic members had never rowed before joining Peregrine.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What fitness level do I need?</h4>
+                    <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <p>You should have a reasonable base level of fitness, but you don't need to be an athlete. Rowing will quickly build your strength and endurance. We have members of all fitness levels.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Do I need to be able to swim?</h4>
+                    <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, all members must be able to swim 50 metres in light clothing and tread water. This is a British Rowing safety requirement. A capsize drill is part of your induction.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What equipment do I need?</h4>
+                    <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <p>To start, just wear comfortable sports clothing that you don't mind getting wet. Leggings and a fitted top work well. The club provides all rowing equipment. You may want to invest in club kit later.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What's the time commitment?</h4>
+                    <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <p>We recommend attending at least one session per week to maintain technique. Racing squad members typically train 2-3 times per week. Sessions last about 2 hours including rigging and de-rigging.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Can I try before I commit?</h4>
+                    <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </div>
+                <div class="faq-answer">
+                    <p>We occasionally hold taster sessions. The best way to try rowing is through our annual Learn To Row programme. Get in touch and we'll let you know about upcoming opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honours Section -->
+    <section class="honours" id="honours">
+        <div class="section-header">
+            <h2>Honours <span>Board</span></h2>
+            <p>Celebrating our achievements through the years.</p>
+        </div>
+        <div class="honours-timeline">
+            <div class="honour-item">
+                <div class="honour-content">
+                    <div class="honour-year">2024</div>
+                    <h4>Vogalonga Venice</h4>
+                    <p>48th Vogalonga, representing Cambridge internationally</p>
+                </div>
+            </div>
+            <div class="honour-item">
+                <div class="honour-content">
+                    <div class="honour-year">2023</div>
+                    <h4>100-Mile Charity Row</h4>
+                    <p>Relay row for Breast Cancer Now</p>
+                </div>
+            </div>
+            <div class="honour-item">
+                <div class="honour-content">
+                    <div class="honour-year">2022</div>
+                    <h4>Town Bumps</h4>
+                    <p>First women's masters crew to compete</p>
+                </div>
+            </div>
+            <div class="honour-item">
+                <div class="honour-content">
+                    <div class="honour-year">2016</div>
+                    <h4>Club Founded</h4>
+                    <p>Peregrine Rowing Club established at Catz Boat House</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="safety" id="safety">
+        <div class="section-header">
+            <h2>Safety <span>First</span></h2>
+            <p>Your safety on the water is our top priority.</p>
+        </div>
+        <div class="safety-grid">
+            <div class="safety-card">
+                <div class="safety-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h4>British Rowing Affiliated</h4>
+                <p>We follow all British Rowing safety guidelines and best practices. All members receive comprehensive safety training.</p>
+            </div>
+            <div class="safety-card">
+                <div class="safety-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <h4>Capsize Drill</h4>
+                <p>All new members complete a capsize drill to ensure confidence in the water. You must swim 50m in light clothing.</p>
+            </div>
+            <div class="safety-card">
+                <div class="safety-icon">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <h4>Qualified Coaches</h4>
+                <p>Our coaches hold British Rowing qualifications and first aid certifications. Safety boats available for all outings.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="instagram-feed" id="social">
+        <h2>Follow Us on <span>Instagram</span></h2>
+        <p>See the latest from the Peregrines <a href="https://www.instagram.com/peregrine_rowing_club/" target="_blank">@peregrine_rowing_club</a></p>
+        <div class="instagram-grid">
+            <div class="instagram-item">
+                <div class="instagram-placeholder">
+                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                </div>
+            </div>
+            <div class="instagram-item">
+                <div class="instagram-placeholder">
+                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                </div>
+            </div>
+            <div class="instagram-item">
+                <div class="instagram-placeholder">
+                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                </div>
+            </div>
+            <div class="instagram-item">
+                <div class="instagram-placeholder">
+                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                </div>
+            </div>
+            <div class="instagram-item">
+                <div class="instagram-placeholder">
+                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                </div>
+            </div>
+            <div class="instagram-item">
+                <div class="instagram-placeholder">
+                    <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -1717,32 +2730,37 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#join">Join Us</a></li>
+                    <li><a href="#faq">FAQs</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Training</h4>
+                <h4>Club Info</h4>
                 <ul>
-                    <li><a href="#">Schedule</a></li>
-                    <li><a href="#">Catz Boathouse</a></li>
-                    <li><a href="#">Equipment</a></li>
-                    <li><a href="#">Safety</a></li>
+                    <li><a href="#training">Training Schedule</a></li>
+                    <li><a href="#membership">Membership</a></li>
+                    <li><a href="#safety">Safety</a></li>
+                    <li><a href="#committee">Committee</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Events</h4>
+                <h4>Achievements</h4>
                 <ul>
-                    <li><a href="#">Town Bumps</a></li>
-                    <li><a href="#">Fairbairns Cup</a></li>
-                    <li><a href="#">Social Events</a></li>
-                    <li><a href="#">Charity Rows</a></li>
+                    <li><a href="#achievements">Our Story</a></li>
+                    <li><a href="#honours">Honours Board</a></li>
+                    <li><a href="#learn-to-row">Learn To Row</a></li>
+                    <li><a href="#social">Follow Us</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Peregrine Rowing Club. All rights reserved.</p>
-            <a href="https://www.britishrowing.org" target="_blank">Affiliated with British Rowing</a>
+            <div class="footer-legal">
+                <a href="#privacy">Privacy Policy</a>
+                <span>|</span>
+                <a href="https://www.britishrowing.org" target="_blank">Affiliated with British Rowing</a>
+            </div>
         </div>
     </footer>
 
@@ -1798,6 +2816,24 @@
             handleFormSubmit(this, 'Thank you for getting in touch! We\'ll be in contact soon.');
         });
 
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+
+                // Toggle clicked item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
         // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
@@ -1813,7 +2849,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.stat-item, .achievement-card, .testimonial-card, .feature').forEach(el => {
+        document.querySelectorAll('.stat-item, .achievement-card, .feature, .schedule-card, .committee-card, .membership-card, .faq-item, .safety-card, .gallery-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
