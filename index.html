@@ -180,6 +180,12 @@
             object-fit: cover;
         }
 
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -1200,8 +1206,12 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-image-container">
-            <!-- Add your hero image: save as hero-image.jpg in the same folder -->
-            <img src="hero-image.jpg" alt="Peregrine Rowing Club eight on the River Cam" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'hero-image-placeholder\'>Add hero-image.jpg</div>';">
+            <!-- Video background - save as hero-video.mp4 in the same folder -->
+            <video class="hero-video" autoplay muted loop playsinline poster="hero-image.jpg">
+                <source src="hero-video.mp4" type="video/mp4">
+                <!-- Fallback to image if video doesn't load -->
+                <img src="hero-image.jpg" alt="Peregrine Rowing Club eight on the River Cam" style="width: 100%; height: 100%; object-fit: cover;">
+            </video>
         </div>
         <div class="hero-bg"></div>
         <div class="hero-content">
