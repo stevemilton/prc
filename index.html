@@ -1120,6 +1120,68 @@
             }
         }
 
+        /* Learn To Row Section */
+        .learn-to-row {
+            background: var(--navy);
+            padding: 6rem 4rem;
+            text-align: center;
+        }
+
+        .learn-to-row-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .learn-to-row-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--salmon) 0%, var(--salmon-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+
+        .learn-to-row-icon svg {
+            width: 40px;
+            height: 40px;
+            color: var(--white);
+        }
+
+        .learn-to-row h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .learn-to-row h2 span {
+            color: var(--salmon);
+            font-style: italic;
+        }
+
+        .learn-to-row p {
+            font-size: 1.1rem;
+            color: var(--pale-blue-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .learn-to-row .btn {
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .learn-to-row {
+                padding: 4rem 1.5rem;
+            }
+            .learn-to-row h2 {
+                font-size: 2.5rem;
+            }
+        }
+
         /* Footer */
         footer {
             background: var(--navy-dark);
@@ -1550,6 +1612,22 @@
                     </button>
                 </form>
             </div>
+        </div>
+    </section>
+
+    <!-- Learn To Row Section -->
+    <section class="learn-to-row" id="learn-to-row">
+        <div class="learn-to-row-content">
+            <div class="learn-to-row-icon">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <h2>Learn To <span>Row</span></h2>
+            <p>Never picked up an oar? No problem. Each year we run a dedicated Learn To Row programme designed specifically for complete beginners. Over several weeks, you'll master the fundamentals of rowing technique, build confidence on the water, and discover whether the Peregrine community is right for you.</p>
+            <p>Our experienced coaches will guide you through everything from your first stroke to rowing as part of a crew. Many of our current members started their rowing journey through this programme.</p>
+            <a href="#join" class="btn btn-primary">
+                Register Your Interest
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
         </div>
     </section>
 
