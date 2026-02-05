@@ -1121,40 +1121,88 @@
         }
 
         /* Learn To Row Section */
-        .learn-to-row {
+        .learn-to-row-wrapper {
             background: var(--navy);
-            padding: 6rem 4rem;
-            text-align: center;
         }
 
-        .learn-to-row-content {
-            max-width: 800px;
+        .learn-to-row {
+            padding: 8rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .learn-to-row-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--salmon) 0%, var(--salmon-light) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
+        .learn-to-row-visual {
+            position: relative;
         }
 
-        .learn-to-row-icon svg {
-            width: 40px;
-            height: 40px;
-            color: var(--white);
+        .learn-to-row-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--pale-blue-light) 0%, var(--pale-blue) 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .learn-to-row-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .learn-to-row-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 150px;
+            height: 150px;
+            background: var(--salmon);
+            opacity: 0.3;
+            border-radius: 50%;
+        }
+
+        .learn-to-row-image::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 200px;
+            height: 200px;
+            border: 3px solid var(--pale-blue);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .learn-to-row-accent {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            transform: translateY(-50%);
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: var(--salmon);
+            text-transform: uppercase;
+        }
+
+        .learn-to-row-content {
+            text-align: left;
         }
 
         .learn-to-row h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 600;
             color: var(--white);
             margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
         .learn-to-row h2 span {
@@ -1165,6 +1213,7 @@
         .learn-to-row p {
             font-size: 1.1rem;
             color: var(--pale-blue-light);
+            opacity: 0.9;
             margin-bottom: 1.5rem;
             line-height: 1.8;
         }
@@ -1173,12 +1222,25 @@
             margin-top: 1rem;
         }
 
+        @media (max-width: 1024px) {
+            .learn-to-row {
+                grid-template-columns: 1fr;
+                padding: 4rem;
+            }
+            .learn-to-row-visual {
+                order: -1;
+            }
+        }
+
         @media (max-width: 768px) {
             .learn-to-row {
                 padding: 4rem 1.5rem;
             }
             .learn-to-row h2 {
                 font-size: 2.5rem;
+            }
+            .learn-to-row-image {
+                height: 350px;
             }
         }
 
@@ -1616,11 +1678,15 @@
     </section>
 
     <!-- Learn To Row Section -->
+    <div class="learn-to-row-wrapper">
     <section class="learn-to-row" id="learn-to-row">
-        <div class="learn-to-row-content">
-            <div class="learn-to-row-icon">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <div class="learn-to-row-visual">
+            <div class="learn-to-row-accent">Beginners Welcome</div>
+            <div class="learn-to-row-image">
+                <img src="team_photo3.jpg" alt="Learn to Row programme participants on the River Cam">
             </div>
+        </div>
+        <div class="learn-to-row-content">
             <h2>Learn To <span>Row</span></h2>
             <p>Never picked up an oar? No problem. Each year we run a dedicated Learn To Row programme designed specifically for complete beginners. Over several weeks, you'll master the fundamentals of rowing technique, build confidence on the water, and discover whether the Peregrine community is right for you.</p>
             <p>Our experienced coaches will guide you through everything from your first stroke to rowing as part of a crew. Many of our current members started their rowing journey through this programme.</p>
@@ -1630,6 +1696,7 @@
             </a>
         </div>
     </section>
+    </div>
 
     <!-- Footer -->
     <footer>
